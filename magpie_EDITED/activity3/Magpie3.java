@@ -30,6 +30,7 @@ public class Magpie3
  public String getResponse(String statement)
  {
   String response = "";
+  statement = statement.trim();
   if (statement.length() == 0)
   {
    response = "Say something, please.";
@@ -45,6 +46,17 @@ public class Magpie3
   {
    response = "Tell me more about your family.";
   }
+  else if (findKeyword(statement, "dog")>= 0){
+   response = "Tell me more about your dog" ;
+  }
+           
+  else if (findKeyword(statement, "cat")>= 0){
+   response = "Tell me more about your cat" ;
+  }
+  else if (findKeyword(statement, "ms. wong")>= 0){
+   response = "WOW! She sure sounds like a great teacher!" ;
+  }
+      
   else
   {
    response = getRandomResponse();
